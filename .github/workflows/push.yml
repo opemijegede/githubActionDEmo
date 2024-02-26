@@ -82,3 +82,19 @@ jobs:
       run: terraform apply -auto-approve
       continue-on-error: true  
       
+    - name: Wait for 60 Seconds  
+      run: sleep 60s
+      shell: bash
+
+    - name: Terraform DESTROY
+      id: destroy
+      env:
+        ARM_CLIENT_ID: ${{ secrets.AZURE_AD_CLIENT_ID }}  
+        ARM_CLIENT_SECRET: ${{ secrets.AZURE_AD_CLIENT_SECRET }}
+        ARM_TENANT_ID: ${{ secrets.AZURE_AD_TENANT_ID }}
+        ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID}}
+        RESOURCE_GROUP: ${{ secrets.RESOURCE_GROUP }}
+        STORAGE_ACCOUNT: ${{ secrets.STORAGE_ACCOUNT }}
+        CONTAINER_NAME: ${{ secrets.CONTAINER_NAME }}
+      run: terraform apply -auto-approve
+      continue-on-error: true  
