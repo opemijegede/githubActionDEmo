@@ -6,6 +6,6 @@ terraform {
     }
   }
   backend "azurerm" {
-    key = "terraform.tfstate"
+    key = "terraform_2.tfstate"
   }
 }
