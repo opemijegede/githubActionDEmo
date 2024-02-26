@@ -9,3 +9,8 @@ terraform {
     key = "terraform_2.tfstate"
   }
 }
+
+provider "azurerm" {
+  features {}
+  #skip_provider_registration = true
+}
