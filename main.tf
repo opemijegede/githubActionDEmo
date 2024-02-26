@@ -26,3 +26,4 @@ resource "azurerm_subnet" "main" {
 
   address_prefixes = each.value.address_prefixes
 }
+
