@@ -16,7 +16,7 @@ jobs:
     defaults:
         run:
           shell: bash
-          working-directory: vnet
+          working-directory: ./vnet
 
     steps:
     # Checkout the repository to the GitHub Actions runner
